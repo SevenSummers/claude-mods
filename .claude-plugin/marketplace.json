@@ -1,0 +1,17 @@
+{
+  "name": "claude-mods",
+  "owner": { "name": "SevenSummers" },
+  "description": "At-a-glance Claude Code mods: a context-usage bar and a running sub-agent board",
+  "plugins": [
+    {
+      "name": "context-bar",
+      "source": "./context-bar",
+      "description": "A horizontal bar above the prompt showing how full the session's context window is"
+    },
+    {
+      "name": "agent-board",
+      "source": "./agent-board",
+      "description": "Lists running sub-agents above the prompt with what each one is doing"
+    }
+  ]
+}
