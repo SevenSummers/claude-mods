@@ -4,7 +4,7 @@ Claude Code mods that add an at-a-glance view above the prompt. They work in the
 
 | Mod | What it shows |
 | --- | --- |
-| `context-bar` | A bar showing how full the session's context window is (green, then amber at 60% and red at 80%), with token counts. At 80% it suggests starting a fresh session. It is measured against the model's full window, so auto-compaction may start before 100%. |
+| `context-bar` | Retro segmented meters on one row for context (`CTX`), five-hour (`5H`) and weekly (`7D`) usage, with token counts and reset countdowns. Each meter is green, then amber at 60% and red at 80%. The usage meters appear on Pro/Max plans once Claude Code has a reading. Context is measured against the model's full window, so auto-compaction may start before 100%. |
 | `agent-board` | While sub-agents run, one row per agent: its type, its task, the first line of its latest progress summary, and how long it has been running. Finished agents stay for 15 seconds with ✓ or ✗. |
 
 ## Install

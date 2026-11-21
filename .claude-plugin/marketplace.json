@@ -6,7 +6,7 @@
     {
       "name": "context-bar",
       "source": "./context-bar",
-      "description": "A horizontal bar above the prompt showing how full the session's context window is"
+      "description": "Retro segmented meters above the prompt for context, five-hour and weekly usage"
     },
     {
       "name": "agent-board",

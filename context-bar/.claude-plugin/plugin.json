@@ -1,1 +1,1 @@
-{ "name": "context-bar", "version": "0.1.0", "description": "A horizontal bar above the prompt showing how full the session's context window is", "types": "./types/index.d.ts" }
+{ "name": "context-bar", "version": "0.5.0", "description": "Retro segmented meters above the prompt for context, five-hour and weekly usage", "types": "./types/index.d.ts" }
