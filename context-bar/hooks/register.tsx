@@ -32,6 +32,13 @@ const CELL_GAP = 2
 const COLORS = { success: '#3fb950', warning: '#d29922', error: '#f85149', unlit: '#8b949e', pace: '#58a6ff' } as const
 /** Extra room opened in the gap that holds the pacing marker, so it never touches a cell. */
 const MARKER_ROOM = 4
+/**
+ * Empty space under the cells. Surfaces centre the meter in the line box, but text sits
+ * high in its line box (room is kept for descenders), so this lifts the cells to the
+ * labels' visual middle.
+ */
+const BASELINE_LIFT = 3
+const SVG_HEIGHT = CELL_HEIGHT + BASELINE_LIFT
 /** Terminal pacing glyph, set between two cells. */
 const PACE_GLYPH = '┃'
 
@@ -150,7 +157,7 @@ function meterSvg(segments: number, lit: number, color: string, paceCell: number
   }
 
   return {
-    source: `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${CELL_HEIGHT}" viewBox="0 0 ${width} ${CELL_HEIGHT}">${parts.join('')}</svg>`,
+    source: `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${SVG_HEIGHT}" viewBox="0 0 ${width} ${SVG_HEIGHT}">${parts.join('')}</svg>`,
     width,
   }
 }
@@ -291,7 +298,7 @@ export const register: Register = on => {
                   )}
                 </Text>
               ) : (
-                <Svg source={bar.source} alt={`${label} ${Math.round(percent)} percent used${paceText}`} width={bar.width} height={CELL_HEIGHT} />
+                <Svg source={bar.source} alt={`${label} ${Math.round(percent)} percent used${paceText}`} width={bar.width} height={SVG_HEIGHT} />
               )}
               <Text mono tabular bold color={color}>
                 {`${Math.round(percent)}%`}
