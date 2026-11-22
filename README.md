@@ -2,7 +2,8 @@
 
 Claude Code mods that add an at-a-glance view above the prompt. They work in the terminal, the VS Code extension and the desktop app.
 
-<img width="694" height="152" alt="image" src="https://github.com/user-attachments/assets/b211ce28-7b44-4d54-8383-56b81dfed56f" />
+<img src="blob:https://web.whatsapp.com/dd218e6e-5b9b-48b0-abea-73c17de65d48"/><img width="716" height="198" alt="image" src="https://github.com/user-attachments/assets/b7a23067-16eb-490d-8836-8f02ff40eda3" />
+
 
 
 | Mod | What it shows |
