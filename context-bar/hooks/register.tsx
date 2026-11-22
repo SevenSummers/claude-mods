@@ -13,10 +13,16 @@ const DANGER_PERCENT = 80
 /** Terminal segment glyphs: a lit cell and an unlit one. */
 const LIT = '▰'
 const UNLIT = '▱'
+/**
+ * Prefix for a reset countdown. The terminal uses a separator: `↻` is missing from most
+ * monospace fonts, and terminals squeeze the wider fallback glyph into one column.
+ */
+const RESET_PREFIX = '↻'
+const TERMINAL_RESET_PREFIX = '· '
 const MIN_SEGMENTS = 6
 const MAX_SEGMENTS = 16
 /** Columns a meter takes besides its segments: label, gaps, percentage, reset countdown. */
-const METER_CHROME = 18
+const METER_CHROME = 19
 /** Least room kept between two meters, in columns. */
 const METER_GAP = 3
 
@@ -246,7 +252,10 @@ export const register: Register = on => {
       meters.push({
         kind: limit.kind,
         percent: limit.percent,
-        detail: limit.resetsAt === undefined ? '' : `↻${countdown(limit.resetsAt, now)}`,
+        detail:
+          limit.resetsAt === undefined
+            ? ''
+            : `${e.surface === 'terminal' ? TERMINAL_RESET_PREFIX : RESET_PREFIX}${countdown(limit.resetsAt, now)}`,
         pace: paceOf(limit.kind, limit.resetsAt, now),
       })
     }
