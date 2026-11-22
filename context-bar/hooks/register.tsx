@@ -258,8 +258,10 @@ export const register: Register = on => {
     const segments = Math.min(MAX_SEGMENTS, Math.max(MIN_SEGMENTS, Math.floor(perMeter - METER_CHROME)))
     const ui = $.ui.resolve(e)
     const { Box, Text } = ui
-    // The terminal has no Svg element; it draws the meters as text glyphs instead.
-    const Svg = 'Svg' in ui ? ui.Svg : undefined
+    // The terminal draws the meters as text glyphs. Branch on the surface, not on whether
+    // the element table has an Svg: the terminal's table carries one at runtime, but it
+    // draws nothing.
+    const Svg = e.surface !== 'terminal' && 'Svg' in ui ? ui.Svg : undefined
 
     // space-between spreads the meters evenly: the first at the left edge, the last at the right.
     return (

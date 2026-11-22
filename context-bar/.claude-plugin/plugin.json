@@ -1,1 +1,1 @@
-{ "name": "context-bar", "version": "0.5.1", "description": "Retro segmented meters above the prompt for context, five-hour and weekly usage", "types": "./types/index.d.ts" }
+{ "name": "context-bar", "version": "0.5.2", "description": "Retro segmented meters above the prompt for context, five-hour and weekly usage", "types": "./types/index.d.ts" }
