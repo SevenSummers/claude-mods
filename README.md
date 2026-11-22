@@ -2,6 +2,8 @@
 
 Claude Code mods that add an at-a-glance view above the prompt. They work in the terminal, the VS Code extension and the desktop app.
 
+<img width="641" height="152" alt="image" src="https://github.com/user-attachments/assets/f132fafc-83dd-4b0c-9c3d-4ad4032aac30" />
+
 | Mod | What it shows |
 | --- | --- |
 | `context-bar` | Retro segmented meters on one row for context (`CTX`), five-hour (`5H`) and weekly (`7D`) usage, with token counts and reset countdowns. Each meter is green, then amber at 60% and red at 80%. The usage meters appear on Pro/Max plans once Claude Code has a reading. Context is measured against the model's full window, so auto-compaction may start before 100%. |
